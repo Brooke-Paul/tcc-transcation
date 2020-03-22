@@ -1,18 +1,16 @@
 package com.tcc.shop;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.tcc.api.entity.CommodityDetail;
+import com.tcc.api.exception.ServiceException;
 import com.tcc.shop.service.CommodityService;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @SpringBootTest
@@ -27,7 +25,7 @@ class ShopApplicationTests {
     }
 
     @Test
-    void insert() throws Exception {
+    void insert() throws ServiceException {
         for (int i = 0; i < 10; i++) {
             CommodityDetail commodityDetail = new CommodityDetail();
             commodityDetail.setCommodityId(UUID.randomUUID().toString());
@@ -41,7 +39,7 @@ class ShopApplicationTests {
     }
 
     @Test
-    void update() throws Exception {
+    void update() throws ServiceException {
         CommodityDetail commodityDetail = commodityService.findById("3f507161-2300-42aa-af60-678d53067ac2");
         if (null != commodityDetail) {
             commodityDetail.setPrice(BigDecimal.valueOf(99));
@@ -51,7 +49,7 @@ class ShopApplicationTests {
     }
 
     @Test
-    void delete() throws Exception {
+    void delete() throws ServiceException {
         CommodityDetail commodityDetail = commodityService.findById("3f507161-2300-42aa-af60-678d53067ac2");
         if (null != commodityDetail) {
             System.out.println(commodityService.delete(commodityDetail.getCommodityId()));
@@ -59,7 +57,7 @@ class ShopApplicationTests {
     }
 
     @Test
-    void findList() throws Exception {
+    void findList() throws ServiceException {
         List<CommodityDetail> list = commodityService.findList(1);
         Gson gson = new Gson();
         System.out.println(gson.toJson(list));

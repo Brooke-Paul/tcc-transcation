@@ -1,10 +1,9 @@
 package com.tcc.shop.mapper;
 
 import com.tcc.api.entity.CommodityDetail;
+import com.tcc.api.exception.ServiceException;
 import org.apache.ibatis.jdbc.SQL;
 import org.springframework.util.StringUtils;
-
-
 
 /**
  * Program Name: CommdityProvider
@@ -16,17 +15,17 @@ import org.springframework.util.StringUtils;
  */
 
 public class CommodityProvider {
-    private static final String COMMODITYSQL = "commodityId,title,subtitle,picture,type,deleted,price";
+    private static final String COMMODITYSQL = "commodityId,title,subtitle,picture,type,deleted,price,created,modified";
 
     /**
      * 保存商品详情
      *
      * @param commodityDetail
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
 
-    public String insert(CommodityDetail commodityDetail) throws Exception {
+    public String insert(CommodityDetail commodityDetail) throws ServiceException {
         return new SQL() {{
             INSERT_INTO("commoditydetail");
             VALUES("commodityId,title,subtitle,picture,type,deleted,price", "#{commodityId},#{title},#{subtitle},#{picture},#{type},#{deleted},#{price}");
@@ -39,9 +38,9 @@ public class CommodityProvider {
      *
      * @param commodityDetail
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    public String update(CommodityDetail commodityDetail) throws Exception {
+    public String update(CommodityDetail commodityDetail) throws ServiceException {
         return new SQL() {{
             UPDATE("commoditydetail");
             if (!StringUtils.isEmpty(commodityDetail.getPicture())) {
@@ -72,9 +71,9 @@ public class CommodityProvider {
      *
      * @param commodityId
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    public String delete(String commodityId) throws Exception {
+    public String delete(String commodityId) throws ServiceException {
         return new SQL() {{
             UPDATE("commoditydetail");
             SET("deleted = 1");
@@ -87,9 +86,9 @@ public class CommodityProvider {
      *
      * @param commodityId
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    public String findById(String commodityId) throws Exception {
+    public String findById(String commodityId) throws ServiceException {
         return new SQL() {{
             SELECT(COMMODITYSQL);
             FROM("commoditydetail");
@@ -102,10 +101,10 @@ public class CommodityProvider {
      *
      * @param type
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
 
-    public String findList(Integer type) throws Exception {
+    public String findList(Integer type) throws ServiceException {
         return new SQL() {{
             SELECT(COMMODITYSQL);
             FROM("commoditydetail");

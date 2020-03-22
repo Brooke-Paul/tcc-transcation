@@ -41,7 +41,13 @@
 			<version>RELEASE</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.tcc</groupId>
+            <artifactId>tcc-transcation-api</artifactId>
+            <version>1.0.0-RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

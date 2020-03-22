@@ -4,6 +4,8 @@ import com.tcc.api.entity.CommodityDetail;
 
 import java.util.List;
 
+import com.tcc.api.exception.ServiceException;
+
 /**
  * Program Name: CommodityService
  * Description: 商品服务接口
@@ -20,9 +22,9 @@ public interface CommodityService {
      *
      * @param commodityDetail
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    int insert(CommodityDetail commodityDetail) throws Exception;
+    int insert(CommodityDetail commodityDetail) throws ServiceException;
 
 
     /**
@@ -30,9 +32,9 @@ public interface CommodityService {
      *
      * @param commodityDetail
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    int update(CommodityDetail commodityDetail) throws Exception;
+    int update(CommodityDetail commodityDetail) throws ServiceException;
 
 
     /**
@@ -40,18 +42,18 @@ public interface CommodityService {
      *
      * @param commodityId
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    int delete(String commodityId) throws Exception;
+    int delete(String commodityId) throws ServiceException;
 
     /**
      * 查找商品详情
      *
      * @param commodityId
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    CommodityDetail findById(String commodityId) throws Exception;
+    CommodityDetail findById(String commodityId) throws ServiceException;
 
 
     /**
@@ -59,7 +61,7 @@ public interface CommodityService {
      *
      * @param type
      * @return
-     * @throws Exception
+     * @throws ServiceException
      */
-    List<CommodityDetail> findList(Integer type) throws Exception;
+    List<CommodityDetail> findList(Integer type) throws ServiceException;
 }

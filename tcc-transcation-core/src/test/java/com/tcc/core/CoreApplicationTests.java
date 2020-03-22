@@ -1,5 +1,6 @@
 package com.tcc.core;
 
+import com.tcc.api.exception.ServiceException;
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -22,12 +23,12 @@ class CoreApplicationTests {
     }
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setUp() throws ServiceException {
         System.out.println("this setUp");
     }
 
     @AfterEach
-    public void tearDown() throws Exception {
+    public void tearDown() throws ServiceException {
         System.out.println("this tearDown");
     }
 
