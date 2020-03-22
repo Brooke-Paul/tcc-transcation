@@ -2,8 +2,8 @@ package com.tcc.api.enumtype;
 
 
 /**
- * Program Name: com.tcc.api.enumtype
- * Description: user amount enumtype
+ * Program Name: AccountEnum
+ * Description: user amount
  * Created by xuetao on 2020/3/21
  *
  * @author xuetao

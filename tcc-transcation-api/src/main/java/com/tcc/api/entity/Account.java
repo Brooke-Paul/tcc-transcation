@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * Program Name: com.tcc.api.entity
+ * Program Name: Account
  * Description: user amount
  * Created by xuetao on 2020/3/21
  *
