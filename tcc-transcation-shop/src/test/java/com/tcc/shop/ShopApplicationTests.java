@@ -6,9 +6,8 @@ import com.tcc.api.exception.ServiceException;
 import com.tcc.shop.service.CommodityService;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
@@ -17,7 +16,7 @@ import java.util.UUID;
 @MapperScan(basePackages = "com.tcc.shop.mapper")
 class ShopApplicationTests {
 
-    @Autowired
+    @Resource
     CommodityService commodityService;
 
     @Test

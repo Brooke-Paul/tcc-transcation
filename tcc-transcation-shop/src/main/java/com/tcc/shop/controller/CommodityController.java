@@ -4,12 +4,10 @@ import com.tcc.api.entity.CommodityDetail;
 import com.tcc.api.entity.ResultObject;
 import com.tcc.api.enumtype.StatusCodeEnum;
 import com.tcc.shop.service.CommodityService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 import com.tcc.api.exception.ServiceException;
+import javax.annotation.Resource;
 
 /**
  * Program Name: CommodityController
@@ -23,7 +21,7 @@ import com.tcc.api.exception.ServiceException;
 @RestController(value = "/v1/")
 public class CommodityController {
 
-    @Autowired
+    @Resource
     private CommodityService commodityService;
 
     /**

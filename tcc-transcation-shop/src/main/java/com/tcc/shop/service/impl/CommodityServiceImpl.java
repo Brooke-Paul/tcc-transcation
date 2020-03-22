@@ -4,9 +4,8 @@ import com.tcc.api.entity.CommodityDetail;
 import com.tcc.api.exception.ServiceException;
 import com.tcc.shop.mapper.CommodityMapper;
 import com.tcc.shop.service.CommodityService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -18,10 +17,10 @@ import java.util.List;
  * @version 1.0
  */
 
-@Service
+@Service("commodityService2")
 public class CommodityServiceImpl implements CommodityService {
 
-    @Autowired
+    @Resource
     private CommodityMapper commodityMapper;
 
     @Override
