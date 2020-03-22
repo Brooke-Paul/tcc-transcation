@@ -17,14 +17,40 @@ import java.util.Date;
 @Data
 public class CommodityDetail implements Serializable {
     private static final long serialVersionUID = 6846781296812419385L;
-
+    /**
+     * 商品id
+     */
     private String commodityId;
+    /**
+     * 商品名称
+     */
     private String title;
+    /**
+     * 商品二级标题
+     */
     private String subtitle;
+    /**
+     * 商品配图
+     */
     private String picture;
+    /**
+     * 商品类型
+     */
     private Integer type;
-    private Integer deleted;
+    /**
+     * 是否删除
+     */
+    private Integer deleted = 0;
+    /**
+     * 商品价格
+     */
     private BigDecimal price;
+    /**
+     * 创建时间
+     */
     private Date created;
+    /**
+     * 更改时间
+     */
     private Date modified;
 }
