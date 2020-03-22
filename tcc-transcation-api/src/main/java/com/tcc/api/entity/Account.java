@@ -18,10 +18,13 @@ import java.util.Date;
 @Data
 public class Account implements Serializable {
 
+    private static final long serialVersionUID = -157479313895500686L;
     private String accountId;
     private String userId;
+    private String userName;
     private BigDecimal amount;
     private Integer version;
     private Date created;
     private Date modified;
+    private Integer state;
 }
