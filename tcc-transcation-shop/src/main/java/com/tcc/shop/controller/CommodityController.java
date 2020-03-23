@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  * @version 1.0
  */
 
-@RestController(value = "/v1/")
+@RestController
 public class CommodityController {
 
     @Resource

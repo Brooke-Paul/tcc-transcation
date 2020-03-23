@@ -3,6 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path');
+const project_config = require('./project.js'); // 在配置生成路径时需要project_config中的相关信息，故预先导入
 
 module.exports = {
   dev: {
@@ -48,9 +49,9 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    DIST_TO: 'tcc-transcation/tcc-transcation-web/src/main/webapp/',
+    assetsSubDirectory: 'commodity/',
+    assetsPublicPath: 'static/',
+    DIST_TO: 'tcc-transcation-web/src/main/webapp/static/',
 
     /**
      * Source Maps
@@ -64,7 +65,7 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
+    productionGzip: true,
     productionGzipExtensions: ['js', 'css'],
 
     // Run the build command with an extra argument to
@@ -72,5 +73,7 @@ module.exports = {
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
-  }
+  },
+  project_config: project_config
+
 }

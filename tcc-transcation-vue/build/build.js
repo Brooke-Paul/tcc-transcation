@@ -15,39 +15,39 @@ const webpackConfig = require('./webpack.prod.conf');
 
 const spinner = ora('building for production...');
 spinner.start();
-function cleanStaticFile(oldTo) {
-  var imgDir = path.join(oldTo, "img/");
-  var compsDir = path.join(oldTo, "tinymce/");
-  var js = path.join(oldTo, "jquery.min.js");
-  var cssDir = path.join(oldTo, "css/");
-  var fontsDir = path.join(oldTo, "fonts/");
-  var jsDir = path.join(oldTo, "js");
-
-  console.log(chalk.cyan('clean path:' + imgDir));
-  rm(imgDir, error => {
-    if(error) throw error;
-  });
-  console.log(chalk.cyan('clean path:' + compsDir));
-  rm(compsDir, error => {
-    if(error) throw error;
-  });
-  console.log(chalk.cyan('clean path:' + js));
-  rm(js, error => {
-    if(error) throw error;
-  });
-  console.log(chalk.cyan('clean path:' + cssDir));
-  rm(cssDir, error => {
-    if(error) throw error;
-  });
-  console.log(chalk.cyan('clean path:' + fontsDir));
-  rm(fontsDir, error => {
-    if(error) throw error;
-  });
-  console.log(chalk.cyan('clean path:' + jsDir));
-  rm(jsDir, error => {
-    if(error) throw error;
-  });
-}
+// function cleanStaticFile(oldTo) {
+//   var imgDir = path.join(oldTo, "img/");
+//   var compsDir = path.join(oldTo, "tinymce/");
+//   var js = path.join(oldTo, "jquery.min.js");
+//   var cssDir = path.join(oldTo, "css/");
+//   var fontsDir = path.join(oldTo, "fonts/");
+//   var jsDir = path.join(oldTo, "js");
+//
+//   console.log(chalk.cyan('clean path:' + imgDir));
+//   rm(imgDir, error => {
+//     if(error) throw error;
+//   });
+//   console.log(chalk.cyan('clean path:' + compsDir));
+//   rm(compsDir, error => {
+//     if(error) throw error;
+//   });
+//   console.log(chalk.cyan('clean path:' + js));
+//   rm(js, error => {
+//     if(error) throw error;
+//   });
+//   console.log(chalk.cyan('clean path:' + cssDir));
+//   rm(cssDir, error => {
+//     if(error) throw error;
+//   });
+//   console.log(chalk.cyan('clean path:' + fontsDir));
+//   rm(fontsDir, error => {
+//     if(error) throw error;
+//   });
+//   console.log(chalk.cyan('clean path:' + jsDir));
+//   rm(jsDir, error => {
+//     if(error) throw error;
+//   });
+// }
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err;
@@ -90,7 +90,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
         try{
           fse.copySync(from, to);
           console.log("copy success");
-          cleanStaticFile(oldTo);
+          // cleanStaticFile(oldTo);
         } catch (e) {
           console.error(e)
         }
