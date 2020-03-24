@@ -3,7 +3,7 @@ package com.tcc.shop;
 import com.google.gson.Gson;
 import com.tcc.api.entity.CommodityDetail;
 import com.tcc.api.exception.ServiceException;
-import com.tcc.shop.service.CommodityService;
+import com.tcc.service.CommodityService;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.test.context.SpringBootTest;

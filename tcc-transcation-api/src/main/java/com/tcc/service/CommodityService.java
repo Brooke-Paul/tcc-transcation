@@ -1,4 +1,4 @@
-package com.tcc.shop.service;
+package com.tcc.service;
 
 import com.tcc.api.entity.CommodityDetail;
 

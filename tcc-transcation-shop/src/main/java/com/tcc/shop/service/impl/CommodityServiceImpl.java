@@ -3,7 +3,7 @@ package com.tcc.shop.service.impl;
 import com.tcc.api.entity.CommodityDetail;
 import com.tcc.api.exception.ServiceException;
 import com.tcc.shop.mapper.CommodityMapper;
-import com.tcc.shop.service.CommodityService;
+import com.tcc.service.CommodityService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
