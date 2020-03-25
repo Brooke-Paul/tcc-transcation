@@ -1,10 +1,11 @@
 package com.tcc.shop.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.tcc.api.entity.CommodityDetail;
 import com.tcc.api.exception.ServiceException;
 import com.tcc.shop.mapper.CommodityMapper;
 import com.tcc.service.CommodityService;
-import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
  * @version 1.0
  */
 
-@Service("commodityService2")
+@Service(group = "tcc")
 public class CommodityServiceImpl implements CommodityService {
 
     @Resource

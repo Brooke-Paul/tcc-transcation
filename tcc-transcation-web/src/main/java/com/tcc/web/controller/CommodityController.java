@@ -1,10 +1,13 @@
 package com.tcc.web.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.annotation.Service;
 import com.tcc.api.entity.CommodityDetail;
 import com.tcc.api.entity.ResultObject;
 import com.tcc.api.enumtype.StatusCodeEnum;
 import com.tcc.api.exception.ServiceException;
 import com.tcc.service.CommodityService;
+import com.tcc.service.PayService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,8 +30,11 @@ import java.util.List;
 public class CommodityController {
 
 
-    @Resource
+    @Reference(group = "tcc")
     private CommodityService commodityService;
+
+    @Reference(group = "tcc")
+    private PayService payService;
 
     /**
      * 商品界面
@@ -49,6 +55,7 @@ public class CommodityController {
      * @throws ServiceException
      */
     @GetMapping(value = "/commodities/{type}")
+    @ResponseBody
     public ResultObject<List<CommodityDetail>> findCommodityList(@PathVariable("type") Integer type) throws ServiceException {
         try {
             List<CommodityDetail> commodityDetails = commodityService.findList(type);
