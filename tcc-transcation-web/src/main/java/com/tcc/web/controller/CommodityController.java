@@ -1,20 +1,19 @@
 package com.tcc.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.annotation.Service;
 import com.tcc.api.entity.CommodityDetail;
 import com.tcc.api.entity.ResultObject;
 import com.tcc.api.enumtype.StatusCodeEnum;
 import com.tcc.api.exception.ServiceException;
+import com.tcc.service.AccountService;
 import com.tcc.service.CommodityService;
-import com.tcc.service.PayService;
+import com.tcc.service.OrderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -34,7 +33,10 @@ public class CommodityController {
     private CommodityService commodityService;
 
     @Reference(group = "tcc")
-    private PayService payService;
+    private OrderService orderService;
+
+    @Reference(group = "tcc")
+    private AccountService accountService;
 
     /**
      * 商品界面

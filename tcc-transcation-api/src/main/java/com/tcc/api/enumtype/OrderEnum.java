@@ -11,15 +11,24 @@ package com.tcc.api.enumtype;
  */
 public enum OrderEnum {
 
-    /**
-     * 未付款
-     */
-    UNPAID(1),
-    /**
-     * 已付款
-     */
-    PAID(2);
 
+    /**
+     * 未支付
+     */
+    UN_PAID(0),
+
+    /**
+     * 已支付
+     */
+    PAID(1),
+    /**
+     * 已退款
+     */
+    REFUND(2),
+    /**
+     * 已取消
+     */
+    CANCELLED(3);
 
     private Integer state;
 
