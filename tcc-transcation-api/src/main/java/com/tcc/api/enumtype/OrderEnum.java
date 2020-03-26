@@ -21,13 +21,13 @@ public enum OrderEnum {
     PAID(2);
 
 
-    private Integer status;
+    private Integer state;
 
-    OrderEnum(Integer status) {
-        this.status = status;
+    OrderEnum(Integer state) {
+        this.state = state;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getState() {
+        return state;
     }
 }

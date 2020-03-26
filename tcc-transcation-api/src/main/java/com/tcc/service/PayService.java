@@ -1,6 +1,9 @@
 package com.tcc.service;
 
+import com.tcc.api.entity.PayDetail;
 import com.tcc.api.exception.ServiceException;
+
+import java.util.List;
 
 /**
  * Program Name: PayService
@@ -12,52 +15,51 @@ import com.tcc.api.exception.ServiceException;
  */
 
 public interface PayService {
-//    /**
-//     * 保存商品详情
-//     *
-//     * @param commodityDetail
-//     * @return
-//     * @throws ServiceException
-//     */
-//    int insert(CommodityDetail commodityDetail) throws ServiceException;
-//
-//
-//    /**
-//     * 更新商品详情
-//     *
-//     * @param commodityDetail
-//     * @return
-//     * @throws ServiceException
-//     */
-//    int update(CommodityDetail commodityDetail) throws ServiceException;
-
-
     /**
-     * 删除商品详情
+     * 保存支付详情
      *
-     * @param commodityId
+     * @param payDetail
      * @return
      * @throws ServiceException
      */
-    int delete(String commodityId) throws ServiceException;
-//
-//    /**
-//     * 查找商品详情
-//     *
-//     * @param commodityId
-//     * @return
-//     * @throws ServiceException
-//     */
-//    CommodityDetail findById(String commodityId) throws ServiceException;
-//
-//
-//    /**
-//     * 按类型查找所有商品（未删除）
-//     *
-//     * @param type
-//     * @return
-//     * @throws ServiceException
-//     */
-//    List<CommodityDetail> findList(Integer type) throws ServiceException;
-//}
+    int insert(PayDetail payDetail) throws ServiceException;
+
+
+    /**
+     * 更新支付详情
+     *
+     * @param payDetail
+     * @return
+     * @throws ServiceException
+     */
+    int update(PayDetail payDetail) throws ServiceException;
+
+
+    /**
+     * 删除支付信息
+     *
+     * @param payId
+     * @return
+     * @throws ServiceException
+     */
+    int delete(String payId) throws ServiceException;
+
+    /**
+     * 查找支付详情
+     *
+     * @param payId
+     * @return
+     * @throws ServiceException
+     */
+    PayDetail findById(String payId) throws ServiceException;
+
+
+    /**
+     * 查找支付记录
+     *
+     * @param userId
+     * @return
+     * @throws ServiceException
+     */
+    List<PayDetail> findList(String userId) throws ServiceException;
 }

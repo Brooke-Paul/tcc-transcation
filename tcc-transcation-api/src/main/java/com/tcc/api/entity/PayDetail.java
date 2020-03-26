@@ -22,6 +22,8 @@ public class PayDetail implements Serializable {
     private String payId;
     private BigDecimal amount;
     private String commodityId;
+    private String userId;
+    private Integer state;
     private Date created;
     private Date modified;
 }

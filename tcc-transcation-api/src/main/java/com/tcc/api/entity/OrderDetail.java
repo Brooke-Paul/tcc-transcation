@@ -22,7 +22,7 @@ public class OrderDetail implements Serializable {
     private String orderId;
     private BigDecimal price;
     private String accountId;
-    private Integer status;
+    private Integer state;
     private Date created;
     private Date modified;
 
