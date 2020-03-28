@@ -1,10 +1,10 @@
-package com.tcc.shop.service.impl;
+package com.tcc.order.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.tcc.api.entity.OrderDetail;
 import com.tcc.api.exception.ServiceException;
+import com.tcc.order.mapper.OrderMapper;
 import com.tcc.service.OrderService;
-import com.tcc.shop.mapper.OrderMapper;
 
 import javax.annotation.Resource;
 import java.util.List;
