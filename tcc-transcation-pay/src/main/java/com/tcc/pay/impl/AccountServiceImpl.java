@@ -1,10 +1,10 @@
-package com.tcc.shop.service.impl;
+package com.tcc.pay.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.tcc.api.entity.Account;
 import com.tcc.api.exception.ServiceException;
+import com.tcc.pay.mapper.AccountMapper;
 import com.tcc.service.AccountService;
-import com.tcc.shop.mapper.AccountMapper;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;

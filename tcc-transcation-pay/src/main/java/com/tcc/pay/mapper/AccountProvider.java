@@ -1,4 +1,4 @@
-package com.tcc.shop.mapper;
+package com.tcc.pay.mapper;
 
 import com.tcc.api.entity.Account;
 import com.tcc.api.exception.ServiceException;
